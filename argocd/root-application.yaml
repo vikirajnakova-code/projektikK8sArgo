@@ -14,5 +14,5 @@ spec:
     namespace: traffic-system
   syncPolicy:
     automated:
-      prune: true
+      prune: true  # toto povoli zmazanie aplikacie
       selfHeal: true
