@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: traffic-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: traffic-backend
+  template:
+    metadata:
+      labels:
+        app: traffic-backend
+    spec:
+      containers:
+      - name: backend
+        image: nginxdemos/hello:plain # Použijeme demo image na simuláciu API textu
+        ports:
+        - containerPort: 80
+        env:
+        - name: REDIS_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: backend-config
+              key: REDIS_HOST
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: redis-secret
+              key: redis-password 
+

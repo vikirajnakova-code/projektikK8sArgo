@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: traffic-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: traffic-frontend
+  template:
+    metadata:
+      labels:
+        app: traffic-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
