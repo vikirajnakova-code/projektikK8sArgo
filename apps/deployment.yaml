@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: backend
-        image: nginxdemos/hello:plain # Použijeme demo image na simuláciu API textu
+        image: python:3.9-slim  # Použijeme čistý Python image
+        command: ["python", "-m", "http.server", "80"]
         ports:
         - containerPort: 80
         env:
