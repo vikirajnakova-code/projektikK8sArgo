@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/vikirajnakova-code/k8s-traffic-monitor.git'
+    repoURL: 'https://github.com/vikirajnakova-code/projektikK8sArgo.git'
     targetRevision: HEAD
     path: apps
   destination:
