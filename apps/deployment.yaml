@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: python:3.9-slim  # Použijeme čistý Python image
+        image: python:3.9-slim-trixie  # Použijeme čistý Python image
         command: ["python", "-m", "http.server", "80"]
         ports:
         - containerPort: 80
